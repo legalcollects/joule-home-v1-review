@@ -127,7 +127,7 @@
           form.reset();
         })
         .catch(function () {
-          showConfirm("Something went wrong sending your inquiry. Please email info@joulelandcompany.com directly and we will respond.", true);
+          showConfirm("Something went wrong sending your inquiry. Please email info@joulelandco.com directly and we will respond.", true);
         })
         .finally(function () {
           if (button) button.disabled = false;
