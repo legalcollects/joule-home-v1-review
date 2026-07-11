@@ -11,10 +11,9 @@
   <meta property="og:site_name" content="Joule Land Company">
   <meta property="og:title" content="Joule Land Company — Developing Land. Powering America.">
   <meta property="og:description" content="Strategic land, power access, and critical infrastructure for America's next generation of industry.">
-  <meta property="og:image" content="images/brand-lockup.jpg">
+  <meta property="og:image" content="https://joulelandcompany.com/images/brand-lockup.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <!-- Enable at production domain launch:
-  <link rel="canonical" href="https://joulelandcompany.com/"> -->
+  <link rel="canonical" href="https://joulelandcompany.com/">
   <link rel="preload" href="fonts/cormorant-garamond-500.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/public-sans-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/styles.css">
@@ -31,6 +30,7 @@
     "areaServed": "US"
   }
   </script>
+  <script defer data-domain="joulelandcompany.com" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -63,8 +63,15 @@
 
   <main id="main">
 
-    <!-- Hero — dark, engraved, survey-plat motif -->
+    <!-- Hero — dark, engraved, survey-plat motif.
+         Film-ready: drop images/hero.mp4 (H.264, muted loop) and a still frame
+         at images/hero-poster.jpg and the footage fades in behind the scrim
+         automatically. Absent those files, the engraved hero stands alone. -->
     <section class="hero">
+      <video class="hero-video" autoplay muted loop playsinline poster="images/hero-poster.jpg" aria-hidden="true" tabindex="-1">
+        <source src="images/hero.mp4" type="video/mp4">
+      </video>
+      <div class="hero-video-scrim" aria-hidden="true"></div>
       <svg class="hero-art" viewBox="0 0 1440 760" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
         <g fill="none" stroke="#B08D57" stroke-opacity="0.14">
           <path d="M-60 620 C 260 540 460 660 760 580 S 1240 500 1520 560"/>
