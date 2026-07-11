@@ -5,9 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact — Joule Land Company</title>
   <meta name="description" content="Contact Joule Land Company — landowner inquiries, utility partnerships, investor discussions, and development partnerships.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Joule Land Company">
+  <meta property="og:title" content="Contact — Joule Land Company">
+  <meta property="og:description" content="Contact Joule Land Company — landowner inquiries, utility partnerships, investor discussions, and development partnerships.">
+  <meta property="og:image" content="images/brand-lockup.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Enable at production domain launch:
+  <link rel="canonical" href="https://joulelandcompany.com/contact.html"> -->
+  <link rel="preload" href="fonts/cormorant-garamond-500.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/public-sans-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -15,7 +24,7 @@
 
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand brand--stack" href="index.html" aria-label="Joule Land Company — Home">
+      <a class="brand" href="index.html" aria-label="Joule Land Company — Home">
         <span class="brand-j" aria-hidden="true">J</span>
         <span class="brand-name">JOULE</span>
         <span class="brand-sub">Land Company</span>
@@ -57,7 +66,7 @@
 
           <aside class="contact-aside reveal">
             <p class="eyebrow">Direct</p>
-            <h2 class="display display--md" style="margin-top:1.2rem;">A serious inquiry deserves a direct reply.</h2>
+            <h2 class="display display--md">A serious inquiry deserves a direct reply.</h2>
             <div class="prose">
               <p>Tell us plainly what you hold or what you need. We respond to every qualified inquiry, and we treat confidential information accordingly.</p>
             </div>
@@ -72,10 +81,10 @@
               </div>
               <div class="contact-channel">
                 <h3>Headquarters</h3>
-                <p>United States <span class="smallcaps-note">(address placeholder)</span></p>
+                <p>Missouri, United States <span class="smallcaps-note">(street address pending)</span></p>
               </div>
             </div>
-            <p class="smallcaps-note" style="margin-top:2rem;">Email addresses shown are placeholders pending domain setup.</p>
+            <p class="smallcaps-note">Email addresses shown are placeholders pending domain setup.</p>
           </aside>
 
           <form class="form reveal reveal-d1" id="contact-form" novalidate>
@@ -108,7 +117,7 @@
                 <input type="tel" id="phone" name="phone" autocomplete="tel">
               </div>
               <div class="field field--full">
-                <label for="location">Site or Market of Interest <span class="smallcaps-note" style="letter-spacing:0.08em;">(if applicable)</span></label>
+                <label for="location">Site or Market of Interest <span class="smallcaps-note hint">(if applicable)</span></label>
                 <input type="text" id="location" name="location" placeholder="e.g., West Texas · 1,200 acres · near 345 kV line">
               </div>
               <div class="field field--full">
@@ -146,14 +155,13 @@
     <div class="container">
       <div class="footer-main">
         <div class="footer-brand">
-          <a class="brand" href="index.html" aria-label="Joule Land Company — Home">
+          <a class="brand brand--left" href="index.html" aria-label="Joule Land Company — Home">
             <span class="brand-j" aria-hidden="true">J</span>
-            <span class="brand-text">
-              <span class="brand-name">JOULE</span>
-              <span class="brand-sub">Land Company</span>
-            </span>
+            <span class="brand-name">JOULE</span>
+            <span class="brand-sub">Land Company</span>
           </a>
           <p class="footer-slogan">Developing Land. Powering America.</p>
+          <p class="footer-locale">Rooted in Missouri · Building for America</p>
         </div>
         <div class="footer-col">
           <h3>Company</h3>
@@ -183,6 +191,10 @@
       </div>
       <div class="footer-bottom">
         <span>&copy; <span id="footer-year">2026</span> Joule Land Company. All rights reserved.</span>
+        <nav class="footer-legal" aria-label="Legal">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Use</a>
+        </nav>
         <span>Representative content. Development details available to qualified counterparties.</span>
       </div>
     </div>

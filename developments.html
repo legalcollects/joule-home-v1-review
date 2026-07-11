@@ -4,10 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Developments — Joule Land Company</title>
-  <meta name="description" content="Representative Joule Land Company developments: energy-enabled campuses and power-ready industrial sites across priority U.S. markets.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Representative Joule Land Company developments: energy-enabled campuses and power-ready industrial sites, anchored in Missouri and priority U.S. markets.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Joule Land Company">
+  <meta property="og:title" content="Developments — Joule Land Company">
+  <meta property="og:description" content="Representative Joule Land Company developments: energy-enabled campuses and power-ready industrial sites, anchored in Missouri and priority U.S. markets.">
+  <meta property="og:image" content="images/brand-lockup.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Enable at production domain launch:
+  <link rel="canonical" href="https://joulelandcompany.com/developments.html"> -->
+  <link rel="preload" href="fonts/cormorant-garamond-500.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/public-sans-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -15,7 +24,7 @@
 
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand brand--stack" href="index.html" aria-label="Joule Land Company — Home">
+      <a class="brand" href="index.html" aria-label="Joule Land Company — Home">
         <span class="brand-j" aria-hidden="true">J</span>
         <span class="brand-name">JOULE</span>
         <span class="brand-sub">Land Company</span>
@@ -46,35 +55,88 @@
         <div class="page-hero-inner">
           <p class="eyebrow reveal">Developments</p>
           <h1 class="display display--xl reveal reveal-d1">Energy-enabled land, developed to institutional standards.</h1>
-          <p class="lede reveal reveal-d2">The profiles below are representative development templates illustrating the scale, structure, and markets Joule pursues. Active portfolio detail is shared with qualified counterparties under confidentiality.</p>
+          <p class="lede reveal reveal-d2">Joule&rsquo;s work is anchored in Missouri, with selective positions in adjacent power markets. The profiles below are representative development templates; active portfolio detail is shared with qualified counterparties under confidentiality.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Territory -->
+    <section class="section section--dark">
+      <div class="container">
+        <div class="territory">
+          <div class="territory-content reveal">
+            <p class="eyebrow">Where We Work</p>
+            <h2 class="display display--lg">Anchored in Missouri.<br>Positioned across MISO.</h2>
+            <div class="prose">
+              <p>The substantial majority of Joule&rsquo;s development activity is concentrated in Missouri — farm counties with strong transmission adjacency, cooperative jurisdictions, and room for industrial-scale power. From that home base, we pursue selective positions across MISO and neighboring markets.</p>
+            </div>
+            <dl class="spec-list">
+              <div><dt>Home Market</dt><dd>Missouri</dd></div>
+              <div><dt>Grid Regions</dt><dd>MISO · SPP · Adjacent</dd></div>
+            </dl>
+          </div>
+          <div class="territory-map reveal reveal-d1">
+            <svg viewBox="0 0 640 480" role="img" aria-label="Stylized map of Missouri showing representative Joule development focus regions">
+              <defs>
+                <pattern id="mapgrid" width="40" height="40" patternUnits="userSpaceOnUse">
+                  <path d="M40 0H0V40" fill="none" stroke="#F6F2EA" stroke-opacity="0.05"/>
+                </pattern>
+              </defs>
+              <rect width="640" height="480" fill="url(#mapgrid)"/>
+              <!-- Stylized Missouri outline -->
+              <path d="M120 78
+                       L448 78
+                       L452 96 L466 110 L462 128 L478 142 L472 160 L486 176 L480 196
+                       L494 214 L490 236 L502 252 L496 274 L508 292 L502 314
+                       L516 330 L560 334 L566 352 L544 356 L540 388 L520 384 L522 356 L500 352
+                       L498 372 L160 372 L158 348 L144 336 L146 316 L132 304 L134 284
+                       L120 272 L122 252 L118 78 Z"
+                    fill="#1A2333" stroke="#B08D57" stroke-opacity="0.55" stroke-width="1.5"/>
+              <!-- River hints -->
+              <path d="M120 150 C 200 170 260 140 330 168 S 430 150 452 132" fill="none" stroke="#B08D57" stroke-opacity="0.18" stroke-width="1"/>
+              <path d="M470 150 C 460 220 480 300 500 350" fill="none" stroke="#B08D57" stroke-opacity="0.18" stroke-width="1"/>
+              <!-- Focus regions -->
+              <g font-family="'Public Sans', Helvetica, Arial, sans-serif" font-size="12" letter-spacing="1.5" fill="#F6F2EA" fill-opacity="0.82">
+                <rect x="140" y="210" width="10" height="10" fill="#B08D57"/>
+                <text x="158" y="220">KANSAS CITY REGION</text>
+                <rect x="452" y="168" width="10" height="10" fill="#B08D57"/>
+                <text x="306" y="178">ST. LOUIS REGION</text>
+                <rect x="300" y="256" width="10" height="10" fill="#B08D57"/>
+                <text x="318" y="266">CENTRAL MISSOURI</text>
+                <rect x="506" y="336" width="10" height="10" fill="#B08D57"/>
+                <text x="322" y="346">SOUTHEAST / BOOTHEEL</text>
+              </g>
+            </svg>
+            <p class="territory-note">Stylized cartography. Focus regions shown are representative; active site locations are disclosed to qualified counterparties.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <p class="smallcaps-note reveal" style="margin-bottom:2.5rem;">All profiles below are representative development templates — figures are illustrative, not active listings.</p>
+        <p class="smallcaps-note projects-note reveal">All profiles below are representative development templates — figures are illustrative, not active listings.</p>
 
         <div class="projects">
 
           <article class="project reveal">
-            <figure class="media" role="img" aria-label="Placeholder for Western Energy Campus imagery">
+            <figure class="media" role="img" aria-label="Placeholder for Heartland Industrial Power Site imagery">
               <div class="media-ph">
-                <span class="media-label">Western Energy Campus<em>Placeholder — replace with aerial or site plan</em></span>
+                <span class="media-label">Heartland Industrial Power Site<em>Placeholder — replace with aerial or site plan</em></span>
               </div>
             </figure>
             <div class="project-body">
               <span class="project-status">Representative Development Template</span>
-              <h3>Western Energy Campus</h3>
-              <p class="project-market">Western U.S. · ERCOT / WECC Markets</p>
-              <p class="desc">A master-planned, energy-enabled campus positioned for hyperscale AI and large industrial loads, combining assembled acreage, phased interconnection, on-site generation optionality, and corridor-ready infrastructure under single ownership.</p>
+              <h3>Heartland Industrial Power Site</h3>
+              <p class="project-market">Missouri · MISO / SPP</p>
+              <p class="desc">A power-ready industrial site concept in Joule&rsquo;s home market: entitlement readiness, workforce access, and right-sized capacity deliverable on an industrial user&rsquo;s schedule, surrounded by the farm counties we know best.</p>
               <dl class="spec-list">
-                <div><dt>Acreage</dt><dd>2,400&plusmn; acres (illustrative)</dd></div>
-                <div><dt>Power Potential</dt><dd>500 MW &ndash; 1 GW+ (illustrative)</dd></div>
+                <div><dt>Acreage</dt><dd>850&plusmn; acres (illustrative)</dd></div>
+                <div><dt>Power Potential</dt><dd>150 &ndash; 400 MW (illustrative)</dd></div>
                 <div><dt>Status</dt><dd>Template — planning framework</dd></div>
-                <div><dt>Market</dt><dd>Western U.S. power markets</dd></div>
-                <div><dt>Intended Use</dt><dd>AI data center &amp; industrial campus</dd></div>
-                <div><dt>Infrastructure</dt><dd>Substation, fiber, water strategy</dd></div>
+                <div><dt>Market</dt><dd>Missouri industrial corridors</dd></div>
+                <div><dt>Intended Use</dt><dd>Advanced manufacturing &amp; processing</dd></div>
+                <div><dt>Infrastructure</dt><dd>Substation, roads, water strategy</dd></div>
               </dl>
             </div>
           </article>
@@ -88,7 +150,7 @@
             <div class="project-body">
               <span class="project-status">Representative Development Template</span>
               <h3>Midwest Power Park</h3>
-              <p class="project-market">Central U.S. · MISO / PJM Markets</p>
+              <p class="project-market">Missouri &amp; Adjacent · MISO Markets</p>
               <p class="desc">A multi-tenant industrial power park concept serving utility-adjacent and manufacturing demand, structured for phased delivery of capacity with shared substation infrastructure and rail and highway logistics access.</p>
               <dl class="spec-list">
                 <div><dt>Acreage</dt><dd>1,100&plusmn; acres (illustrative)</dd></div>
@@ -102,45 +164,45 @@
           </article>
 
           <article class="project reveal">
-            <figure class="media" role="img" aria-label="Placeholder for Desert AI Infrastructure Campus imagery">
+            <figure class="media" role="img" aria-label="Placeholder for Ozark Gateway AI Campus imagery">
               <div class="media-ph">
-                <span class="media-label">Desert AI Infrastructure Campus<em>Placeholder — replace with aerial or site plan</em></span>
+                <span class="media-label">Ozark Gateway AI Campus<em>Placeholder — replace with aerial or site plan</em></span>
               </div>
             </figure>
             <div class="project-body">
               <span class="project-status">Representative Development Template</span>
-              <h3>Desert AI Infrastructure Campus</h3>
-              <p class="project-market">Desert Southwest · WECC Markets</p>
-              <p class="desc">A gigawatt-class campus concept for hyperscale AI infrastructure in the Desert Southwest, pairing large contiguous acreage with generation-integrated power strategy, dry-cooling-oriented water planning, and long-haul fiber adjacency.</p>
+              <h3>Ozark Gateway AI Campus</h3>
+              <p class="project-market">Southern Missouri · MISO / SPP Seams</p>
+              <p class="desc">A campus-scale concept for AI and data center infrastructure at the seams of MISO and SPP, pairing large contiguous acreage with generation-integrated power strategy, conservative water planning, and long-haul fiber adjacency.</p>
               <dl class="spec-list">
-                <div><dt>Acreage</dt><dd>3,000&plusmn; acres (illustrative)</dd></div>
-                <div><dt>Power Potential</dt><dd>1 GW+ (illustrative)</dd></div>
+                <div><dt>Acreage</dt><dd>2,400&plusmn; acres (illustrative)</dd></div>
+                <div><dt>Power Potential</dt><dd>500 MW &ndash; 1 GW+ (illustrative)</dd></div>
                 <div><dt>Status</dt><dd>Template — planning framework</dd></div>
-                <div><dt>Market</dt><dd>Desert Southwest growth corridors</dd></div>
-                <div><dt>Intended Use</dt><dd>Hyperscale AI infrastructure</dd></div>
+                <div><dt>Market</dt><dd>Southern Missouri growth corridors</dd></div>
+                <div><dt>Intended Use</dt><dd>AI data center &amp; industrial campus</dd></div>
                 <div><dt>Infrastructure</dt><dd>Generation integration, fiber, water strategy</dd></div>
               </dl>
             </div>
           </article>
 
           <article class="project reveal">
-            <figure class="media" role="img" aria-label="Placeholder for Heartland Industrial Power Site imagery">
+            <figure class="media" role="img" aria-label="Placeholder for Western Energy Campus imagery">
               <div class="media-ph">
-                <span class="media-label">Heartland Industrial Power Site<em>Placeholder — replace with aerial or site plan</em></span>
+                <span class="media-label">Western Energy Campus<em>Placeholder — replace with aerial or site plan</em></span>
               </div>
             </figure>
             <div class="project-body">
               <span class="project-status">Representative Development Template</span>
-              <h3>Heartland Industrial Power Site</h3>
-              <p class="project-market">Central U.S. · SPP / MISO Markets</p>
-              <p class="desc">A power-ready industrial site concept for advanced manufacturing and energy-intensive processing, emphasizing entitlement readiness, workforce access, and right-sized capacity deliverable on an industrial user&rsquo;s schedule.</p>
+              <h3>Western Energy Campus</h3>
+              <p class="project-market">Selective · Western U.S. Markets</p>
+              <p class="desc">Beyond the home market: a master-planned, energy-enabled campus template for hyperscale AI and large industrial loads in western power markets, pursued only where the underwriting matches our Missouri standard.</p>
               <dl class="spec-list">
-                <div><dt>Acreage</dt><dd>850&plusmn; acres (illustrative)</dd></div>
-                <div><dt>Power Potential</dt><dd>150 &ndash; 400 MW (illustrative)</dd></div>
+                <div><dt>Acreage</dt><dd>3,000&plusmn; acres (illustrative)</dd></div>
+                <div><dt>Power Potential</dt><dd>1 GW+ (illustrative)</dd></div>
                 <div><dt>Status</dt><dd>Template — planning framework</dd></div>
-                <div><dt>Market</dt><dd>Central U.S. industrial corridors</dd></div>
-                <div><dt>Intended Use</dt><dd>Advanced manufacturing &amp; processing</dd></div>
-                <div><dt>Infrastructure</dt><dd>Substation, roads, water strategy</dd></div>
+                <div><dt>Market</dt><dd>Western U.S. power markets</dd></div>
+                <div><dt>Intended Use</dt><dd>Hyperscale AI infrastructure</dd></div>
+                <div><dt>Infrastructure</dt><dd>Substation, fiber, water strategy</dd></div>
               </dl>
             </div>
           </article>
@@ -154,7 +216,7 @@
         <div class="cta-band reveal">
           <p class="eyebrow eyebrow--center">Qualified Counterparties</p>
           <h2 class="display display--xl">Portfolio detail is shared directly, not published.</h2>
-          <p class="lede" style="max-width:36em;">For active site information, capacity schedules, and development timelines, contact Joule to begin a qualified discussion.</p>
+          <p class="lede">For active site information, capacity schedules, and development timelines, contact Joule to begin a qualified discussion.</p>
           <div class="actions">
             <a class="btn btn--bronze" href="contact.html">Request Information</a>
             <a class="btn btn--on-dark" href="our-approach.html">Our Approach</a>
@@ -169,14 +231,13 @@
     <div class="container">
       <div class="footer-main">
         <div class="footer-brand">
-          <a class="brand" href="index.html" aria-label="Joule Land Company — Home">
+          <a class="brand brand--left" href="index.html" aria-label="Joule Land Company — Home">
             <span class="brand-j" aria-hidden="true">J</span>
-            <span class="brand-text">
-              <span class="brand-name">JOULE</span>
-              <span class="brand-sub">Land Company</span>
-            </span>
+            <span class="brand-name">JOULE</span>
+            <span class="brand-sub">Land Company</span>
           </a>
           <p class="footer-slogan">Developing Land. Powering America.</p>
+          <p class="footer-locale">Rooted in Missouri · Building for America</p>
         </div>
         <div class="footer-col">
           <h3>Company</h3>
@@ -206,6 +267,10 @@
       </div>
       <div class="footer-bottom">
         <span>&copy; <span id="footer-year">2026</span> Joule Land Company. All rights reserved.</span>
+        <nav class="footer-legal" aria-label="Legal">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Use</a>
+        </nav>
         <span>Representative content. Development details available to qualified counterparties.</span>
       </div>
     </div>

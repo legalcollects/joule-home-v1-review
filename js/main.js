@@ -4,6 +4,11 @@
 (function () {
   "use strict";
 
+  /* Contact form endpoint.
+     Set this to your form service URL (Formspree, Basin, your own API, etc.)
+     to activate live submissions. While empty, the form runs in demo mode. */
+  var FORM_ENDPOINT = "";
+
   /* Mobile navigation */
   var toggle = document.querySelector(".nav-toggle");
   var nav = document.getElementById("site-nav");
@@ -44,22 +49,89 @@
   var year = document.getElementById("footer-year");
   if (year) year.textContent = String(new Date().getFullYear());
 
-  /* Contact form — no backend is wired yet; confirm locally.
-     Replace this handler with a POST to your form endpoint or CRM. */
+  /* Contact form — designed validation + endpoint submission */
   var form = document.getElementById("contact-form");
   if (form) {
+    var confirmBox = document.getElementById("form-confirm");
+
+    function setFieldError(field, message) {
+      var wrap = field.closest(".field");
+      if (!wrap) return;
+      var note = wrap.querySelector(".field-error");
+      if (!note) {
+        note = document.createElement("p");
+        note.className = "field-error";
+        wrap.appendChild(note);
+      }
+      if (message) {
+        note.textContent = message;
+        wrap.classList.add("has-error");
+        field.classList.add("invalid");
+      } else {
+        wrap.classList.remove("has-error");
+        field.classList.remove("invalid");
+      }
+    }
+
+    function validate() {
+      var ok = true;
+      var firstBad = null;
+      form.querySelectorAll("[required]").forEach(function (field) {
+        var message = "";
+        if (!field.value || (field.tagName === "SELECT" && field.value === "")) {
+          message = "This field is required.";
+        } else if (field.type === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value)) {
+          message = "Enter a valid email address.";
+        }
+        setFieldError(field, message);
+        if (message && !firstBad) firstBad = field;
+        if (message) ok = false;
+      });
+      if (firstBad) firstBad.focus();
+      return ok;
+    }
+
+    form.querySelectorAll("[required]").forEach(function (field) {
+      field.addEventListener("input", function () { setFieldError(field, ""); });
+      field.addEventListener("change", function () { setFieldError(field, ""); });
+    });
+
+    function showConfirm(message, isError) {
+      if (!confirmBox) return;
+      confirmBox.textContent = message;
+      confirmBox.classList.toggle("form-confirm--error", !!isError);
+      confirmBox.hidden = false;
+      confirmBox.focus();
+    }
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      if (!form.checkValidity()) {
-        form.reportValidity();
+      if (!validate()) return;
+
+      if (!FORM_ENDPOINT) {
+        showConfirm("Thank you. Your inquiry has been recorded for this demonstration. Once the form endpoint is connected in js/main.js, submissions will reach the Joule team directly.");
+        form.reset();
         return;
       }
-      var confirm = document.getElementById("form-confirm");
-      if (confirm) {
-        confirm.hidden = false;
-        confirm.focus();
-      }
-      form.reset();
+
+      var button = form.querySelector('button[type="submit"]');
+      if (button) button.disabled = true;
+      fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: { "Accept": "application/json" },
+        body: new FormData(form)
+      })
+        .then(function (res) {
+          if (!res.ok) throw new Error("Submission failed");
+          showConfirm("Thank you. Your inquiry has been received; a Joule principal will respond directly.");
+          form.reset();
+        })
+        .catch(function () {
+          showConfirm("Something went wrong sending your inquiry. Please email info@joulelandcompany.com directly and we will respond.", true);
+        })
+        .finally(function () {
+          if (button) button.disabled = false;
+        });
     });
   }
 })();
