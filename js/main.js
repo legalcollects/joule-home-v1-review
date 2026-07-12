@@ -108,9 +108,31 @@
       e.preventDefault();
       if (!validate()) return;
 
-      if (!FORM_ENDPOINT) {
-        showConfirm("Thank you. Your inquiry has been recorded for this demonstration. Once the form endpoint is connected in js/main.js, submissions will reach the Joule team directly.");
+      /* Honeypot: bots fill the hidden field; drop silently with a success face */
+      var hp = form.querySelector('[name="_gotcha"]');
+      if (hp && hp.value) {
+        showConfirm("Thank you. Your inquiry has been received.");
         form.reset();
+        return;
+      }
+
+      if (!FORM_ENDPOINT) {
+        /* No endpoint yet: open a prefilled email so real inquiries still arrive */
+        var get = function (id) { var el = document.getElementById(id); return el ? el.value.trim() : ""; };
+        var typeSel = document.getElementById("inquiry-type");
+        var typeLabel = typeSel && typeSel.selectedIndex > 0 ? typeSel.options[typeSel.selectedIndex].text : "General Contact";
+        var body =
+          "Inquiry Type: " + typeLabel + "\n" +
+          "Name: " + get("name") + "\n" +
+          "Organization: " + get("organization") + "\n" +
+          "Email: " + get("email") + "\n" +
+          "Phone: " + get("phone") + "\n" +
+          "Site / Market: " + get("location") + "\n\n" +
+          get("message");
+        window.location.href = "mailto:info@joulelandco.com" +
+          "?subject=" + encodeURIComponent("Website Inquiry — " + typeLabel) +
+          "&body=" + encodeURIComponent(body);
+        showConfirm("Your inquiry has been prepared in your email application — press send to deliver it. You can also write to info@joulelandco.com directly.");
         return;
       }
 
