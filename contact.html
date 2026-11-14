@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#121926">
+  <meta name="theme-color" content="#FFFFFF">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Contact — Joule Land Company</title>
-  <meta name="description" content="Contact Joule Land Company — landowner inquiries, utility partnerships, investor discussions, and development partnerships.">
+  <meta name="description" content="Contact Joule Land Company: landowner inquiries, utility partnerships, investor discussions, and development partnerships.">
+  <link rel="icon" href="favicon.ico" sizes="48x48">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Joule Land Company">
   <meta property="og:title" content="Contact — Joule Land Company">
-  <meta property="og:description" content="Contact Joule Land Company — landowner inquiries, utility partnerships, investor discussions, and development partnerships.">
+  <meta property="og:description" content="Contact Joule Land Company: landowner inquiries, utility partnerships, investor discussions, and development partnerships.">
   <meta property="og:image" content="https://joulelandco.com/images/brand-lockup.jpg">
   <meta property="og:url" content="https://joulelandco.com/contact.html">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://joulelandco.com/contact.html">
-  <link rel="preload" href="fonts/cormorant-garamond-500.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/public-sans-400.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preload" href="fonts/inter-variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/styles.css?v=d21">
   <script defer data-domain="joulelandco.com" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
@@ -28,22 +28,17 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html" aria-label="Joule Land Company — Home">
-        <span class="brand-j" aria-hidden="true">J</span>
+        <svg class="brand-mark" viewBox="-2 0 28 37" aria-hidden="true" focusable="false"><path d="M8 6H20V22A9 9 0 0 1 2 22" fill="none" stroke="currentColor" stroke-width="6"/></svg>
         <span class="brand-name">JOULE</span>
         <span class="brand-sub">Land Company</span>
       </a>
       <nav class="site-nav" id="site-nav" aria-label="Primary">
-        <a href="about.html">About</a>
+        <a href="developments.html">Available Sites</a>
         <a href="our-approach.html">Our Approach</a>
-        <a href="developments.html">Developments</a>
-        <a href="power-solutions.html">Power Solutions</a>
-        <a href="infrastructure.html">Infrastructure</a>
-        <a href="investors-partners.html">Investors</a>
-        <a href="insights.html">News</a>
-        <a href="contact.html" aria-current="page">Contact</a>
+        <a href="about.html">About</a>
       </nav>
       <div class="header-cta">
-        <a class="btn btn--outline" href="#contact-form">Partner With Us</a>
+        <a class="btn btn--primary btn--sm" href="#contact-form" aria-current="page">Contact</a>
       </div>
       <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
         <span></span><span></span><span></span>
@@ -58,7 +53,7 @@
         <div class="page-hero-inner">
           <p class="eyebrow reveal">Contact</p>
           <h1 class="display display--xl reveal reveal-d1">Begin the conversation.</h1>
-          <p class="lede reveal reveal-d2">Whether you hold land, operate the grid, deploy capital, or need a powered site — inquiries reach a principal, and they are answered.</p>
+          <p class="lede reveal reveal-d2">Tell us what you hold or what you need.</p>
         </div>
       </div>
     </section>
@@ -68,23 +63,19 @@
         <div class="contact-grid">
 
           <aside class="contact-aside reveal">
-            <p class="eyebrow">Direct</p>
-            <h2 class="display display--md">A serious inquiry deserves a direct reply.</h2>
-            <div class="prose">
-              <p>Tell us plainly what you hold or what you need. We respond to every qualified inquiry, and we treat confidential information accordingly.</p>
-            </div>
+            <h2 class="sr-only">Direct contact</h2>
             <div class="contact-channels">
               <div class="contact-channel">
-                <h3>General &amp; Partnerships</h3>
+                <h3>Email</h3>
                 <p><a href="mailto:info@joulelandco.com">info@joulelandco.com</a></p>
               </div>
               <div class="contact-channel">
-                <h3>Landowner Inquiries</h3>
-                <p><a href="mailto:land@joulelandco.com">land@joulelandco.com</a></p>
+                <h3>Landowners</h3>
+                <p class="contact-hint">Own land beside a substation or transmission line? Choose &ldquo;Landowner Inquiry&rdquo; and tell us the county and acreage.</p>
               </div>
               <div class="contact-channel">
-                <h3>Headquarters</h3>
-                <p>Missouri, United States <span class="smallcaps-note">(street address pending)</span></p>
+                <h3>Office</h3>
+                <address class="contact-address">Joule Land Company, Inc.<br>7660 Fay Ave, Suite H247<br>La Jolla, CA 92037</address>
               </div>
             </div>
           </aside>
@@ -99,6 +90,7 @@
                 <label for="inquiry-type">Inquiry Type <span class="req" aria-hidden="true">*</span></label>
                 <select id="inquiry-type" name="inquiry-type" required>
                   <option value="" selected disabled>Select an inquiry type</option>
+                  <option value="available-site">Available Site Inquiry</option>
                   <option value="landowner">Landowner Inquiry</option>
                   <option value="power-utility">Power / Utility Partnership</option>
                   <option value="investor">Investor Inquiry</option>
@@ -124,7 +116,7 @@
               </div>
               <div class="field field--full">
                 <label for="location">Site or Market of Interest <span class="smallcaps-note hint">(if applicable)</span></label>
-                <input type="text" id="location" name="location" placeholder="e.g., Callaway County, MO · 1,200 acres · near 345 kV line">
+                <input type="text" id="location" name="location" placeholder="e.g., Morgan County, MO · 5 acres · beside a substation">
               </div>
               <div class="field field--full">
                 <label for="message">Message <span class="req" aria-hidden="true">*</span></label>
@@ -132,25 +124,12 @@
               </div>
             </div>
             <div class="form-footer">
-              <button type="submit" class="btn btn--solid">Submit Inquiry</button>
-              <p class="form-note">Submissions are held in confidence and reach a Joule principal directly. Prefer email? Write to <a href="mailto:info@joulelandco.com">info@joulelandco.com</a>.</p>
+              <button type="submit" class="btn btn--primary">Submit Inquiry</button>
+              <p class="form-note">Submissions are held in confidence. Prefer email? Write to <a href="mailto:info@joulelandco.com">info@joulelandco.com</a>.</p>
             </div>
-            <p class="form-confirm" id="form-confirm" tabindex="-1" hidden>Thank you. Your inquiry has been received.</p>
+            <p class="form-confirm" id="form-confirm" role="status" tabindex="-1" hidden>Thank you. Your inquiry has been received.</p>
           </form>
 
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--dark">
-      <div class="container">
-        <div class="cta-band reveal">
-          <p class="eyebrow eyebrow--center">While You&rsquo;re Here</p>
-          <h2 class="display display--xl">Understand how Joule develops before you engage.</h2>
-          <div class="actions">
-            <a class="btn btn--bronze" href="our-approach.html">Our Approach</a>
-            <a class="btn btn--on-dark" href="developments.html">Developments</a>
-          </div>
         </div>
       </div>
     </section>
@@ -162,50 +141,42 @@
       <div class="footer-main">
         <div class="footer-brand">
           <a class="brand brand--left" href="index.html" aria-label="Joule Land Company — Home">
-            <span class="brand-j" aria-hidden="true">J</span>
+            <svg class="brand-mark" viewBox="-2 0 28 37" aria-hidden="true" focusable="false"><path d="M8 6H20V22A9 9 0 0 1 2 22" fill="none" stroke="currentColor" stroke-width="6"/></svg>
             <span class="brand-name">JOULE</span>
             <span class="brand-sub">Land Company</span>
           </a>
           <p class="footer-slogan">Developing Land. Powering America.</p>
-          <p class="footer-locale">Rooted in Missouri · Building for America</p>
         </div>
         <div class="footer-col">
           <h3>Company</h3>
           <ul>
-            <li><a href="about.html">About</a></li>
+            <li><a href="developments.html">Available Sites</a></li>
             <li><a href="our-approach.html">Our Approach</a></li>
-            <li><a href="insights.html">News &amp; Insights</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html">About</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h3>Platform</h3>
+          <h3>Contact</h3>
           <ul>
-            <li><a href="developments.html">Developments</a></li>
-            <li><a href="power-solutions.html">Power Solutions</a></li>
-            <li><a href="infrastructure.html">Infrastructure</a></li>
+            <li><a href="mailto:info@joulelandco.com">info@joulelandco.com</a></li>
+            <li><a href="contact.html">Send an inquiry</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h3>Partners</h3>
-          <ul>
-            <li><a href="investors-partners.html">Investors &amp; Partners</a></li>
-            <li><a href="contact.html">Landowner Inquiries</a></li>
-            <li><a href="contact.html">Utility Partnerships</a></li>
-          </ul>
+          <h3>Office</h3>
+          <address class="footer-address">Joule Land Company, Inc.<br>7660 Fay Ave, Suite H247<br>La Jolla, CA 92037</address>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>&copy; <span id="footer-year">2026</span> Joule Land Company. All rights reserved.</span>
+        <span>&copy; <span id="footer-year">2026</span> Joule Land Company, Inc. All rights reserved.</span>
         <nav class="footer-legal" aria-label="Legal">
           <a href="privacy.html">Privacy Policy</a>
           <a href="terms.html">Terms of Use</a>
         </nav>
-        <span>Representative content. Development details available to qualified counterparties.</span>
       </div>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=d21"></script>
 </body>
 </html>

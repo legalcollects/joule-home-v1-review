@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#121926">
+  <meta name="theme-color" content="#FFFFFF">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Joule Land Company — Developing Land. Powering America.</title>
-  <meta name="description" content="Joule Land Company acquires and develops strategic land, secures scalable power access, and delivers critical infrastructure for AI data centers, utilities, and American industry.">
+  <meta name="description" content="Joule Land Company develops powered land for AI, industry, and utilities. Powered sites are available now in Missouri, Iowa, and Oklahoma.">
+  <link rel="icon" href="favicon.ico" sizes="48x48">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <meta property="og:type" content="website">
@@ -17,9 +18,8 @@
   <meta property="og:url" content="https://joulelandco.com/">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://joulelandco.com/">
-  <link rel="preload" href="fonts/cormorant-garamond-500.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/public-sans-400.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preload" href="fonts/inter-variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/styles.css?v=d21">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -29,7 +29,8 @@
     "description": "Joule Land Company acquires and develops strategic land, secures scalable power access, and delivers critical infrastructure for AI data centers, utilities, industrial campuses, and long-term American energy development.",
     "url": "https://joulelandco.com/",
     "email": "info@joulelandco.com",
-    "address": { "@type": "PostalAddress", "addressRegion": "MO", "addressCountry": "US" },
+    "legalName": "Joule Land Company, Inc.",
+    "address": { "@type": "PostalAddress", "streetAddress": "7660 Fay Ave, Suite H247", "addressLocality": "La Jolla", "addressRegion": "CA", "postalCode": "92037", "addressCountry": "US" },
     "areaServed": "US"
   }
   </script>
@@ -41,22 +42,17 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html" aria-label="Joule Land Company — Home">
-        <span class="brand-j" aria-hidden="true">J</span>
+        <svg class="brand-mark" viewBox="-2 0 28 37" aria-hidden="true" focusable="false"><path d="M8 6H20V22A9 9 0 0 1 2 22" fill="none" stroke="currentColor" stroke-width="6"/></svg>
         <span class="brand-name">JOULE</span>
         <span class="brand-sub">Land Company</span>
       </a>
       <nav class="site-nav" id="site-nav" aria-label="Primary">
-        <a href="about.html">About</a>
+        <a href="developments.html">Available Sites</a>
         <a href="our-approach.html">Our Approach</a>
-        <a href="developments.html">Developments</a>
-        <a href="power-solutions.html">Power Solutions</a>
-        <a href="infrastructure.html">Infrastructure</a>
-        <a href="investors-partners.html">Investors</a>
-        <a href="insights.html">News</a>
-        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
       </nav>
       <div class="header-cta">
-        <a class="btn btn--outline" href="contact.html">Partner With Us</a>
+        <a class="btn btn--primary btn--sm" href="contact.html">Contact</a>
       </div>
       <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
         <span></span><span></span><span></span>
@@ -66,229 +62,125 @@
 
   <main id="main">
 
-    <!-- Hero — dark, engraved, survey-plat motif.
-         Film-ready: drop images/hero.mp4 (H.264, muted loop) and a still frame
-         at images/hero-poster.jpg and the footage fades in behind the scrim
-         automatically. Absent those files, the engraved hero stands alone. -->
+    <!-- Hero: headline and actions over the full-width image -->
     <section class="hero">
-      <video class="hero-video" autoplay muted loop playsinline poster="images/hero-poster.jpg" aria-hidden="true" tabindex="-1">
-        <source src="images/hero.mp4" type="video/mp4">
-      </video>
-      <div class="hero-video-scrim" aria-hidden="true"></div>
-      <svg class="hero-art" viewBox="0 0 1440 760" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
-        <g fill="none" stroke="#B08D57" stroke-opacity="0.14">
-          <path d="M-60 620 C 260 540 460 660 760 580 S 1240 500 1520 560"/>
-          <path d="M-60 560 C 270 484 470 596 770 522 S 1250 448 1520 502"/>
-          <path d="M-60 500 C 280 430 480 534 780 466 S 1260 398 1520 446"/>
-          <path d="M-60 680 C 250 598 450 724 750 640 S 1230 554 1520 618"/>
-        </g>
-        <g stroke="#B08D57" stroke-opacity="0.4">
-          <polyline points="880,760 990,600 1130,520 1290,470 1440,452" fill="none"/>
-          <rect x="985" y="595" width="9" height="9" fill="#B08D57"/>
-          <rect x="1125" y="515" width="9" height="9" fill="#B08D57"/>
-          <rect x="1285" y="465" width="9" height="9" fill="#B08D57"/>
-        </g>
-      </svg>
+      <picture>
+        <source media="(max-width: 640px)" srcset="images/hero-land-power-mobile.webp" width="753" height="941">
+        <img class="hero-media" src="images/hero-land-power-16x9.webp" width="1672" height="941" fetchpriority="high" alt="Aerial view of transmission towers crossing green farmland toward an electrical substation at sunset">
+      </picture>
+      <div class="hero-scrim" aria-hidden="true"></div>
       <div class="container">
         <div class="hero-inner">
-          <div class="hero-rule reveal"></div>
-          <p class="eyebrow reveal">Land · Power · Infrastructure</p>
-          <h1 class="display display--hero reveal reveal-d1">Developing Land.<br>Powering America.</h1>
-          <p class="lede reveal reveal-d2">Joule Land Company acquires and develops strategic land, power access, and infrastructure for America&rsquo;s next generation of industry.</p>
-          <div class="hero-actions reveal reveal-d3">
-            <a class="btn btn--bronze" href="our-approach.html">Our Approach</a>
-            <a class="btn btn--on-dark" href="contact.html">Partner With Us</a>
+          <div class="hero-rule"></div>
+          <p class="eyebrow">Land / Power / Infrastructure</p>
+          <h1 class="display display--hero">Developing Land.<br>Powering America.</h1>
+          <p class="lede">Joule Land Company acquires and develops strategic land, power access, and infrastructure for America&rsquo;s next generation of industry.</p>
+          <div class="hero-actions">
+            <a class="btn btn--primary" href="developments.html">View Available Sites</a>
+            <a class="btn btn--secondary" href="contact.html">Partner With Us</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Value pillars -->
-    <section class="section">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">What We Hold</p>
-          <h2 class="display display--lg">The foundations of durable industrial value</h2>
-        </div>
-        <ul class="pillars">
-          <li class="pillar reveal">
-            <span class="pillar-num">I.</span>
-            <h3>Strategic Land</h3>
-            <p>Site control in locations where geography, transmission, water, and market demand converge — acquired with discipline and held for the long term.</p>
-          </li>
-          <li class="pillar reveal reveal-d1">
-            <span class="pillar-num">II.</span>
-            <h3>Power Access</h3>
-            <p>Interconnection positions, utility relationships, and generation strategies that convert acreage into energy-enabled development capacity.</p>
-          </li>
-          <li class="pillar reveal reveal-d2">
-            <span class="pillar-num">III.</span>
-            <h3>Critical Infrastructure</h3>
-            <p>Substations, corridors, fiber, water, and site works engineered to the standards of utility-scale and hyperscale counterparties.</p>
-          </li>
-          <li class="pillar reveal reveal-d3">
-            <span class="pillar-num">IV.</span>
-            <h3>Long-Term Partnership</h3>
-            <p>Structures built for patient capital, utilities, landowners, and industrial users — aligned across decades, not quarters.</p>
-          </li>
-        </ul>
+    <!-- What is available right now, in one line -->
+    <section class="availability" aria-label="Available sites">
+      <div class="container availability-inner">
+        <p class="availability-label">Available now</p>
+        <p class="availability-text">Powered sites in Missouri, Iowa, and Oklahoma.</p>
+        <a class="text-link" href="developments.html">See the list</a>
       </div>
     </section>
 
     <!-- Mission statement -->
-    <section class="section section--tone section--line-top">
+    <section class="section section--dark">
       <div class="container">
         <div class="statement reveal">
-          <span class="statement-mark" aria-hidden="true">&#10087;</span>
           <blockquote>We develop the land and infrastructure that power <em>innovation, industry, and opportunity.</em></blockquote>
           <p class="attribution">The Joule Mandate</p>
         </div>
       </div>
     </section>
 
-    <!-- Feature cards -->
-    <section class="section section--line-top">
+    <!-- Capabilities -->
+    <section class="section">
       <div class="container">
         <div class="section-head reveal">
           <p class="eyebrow">Capabilities</p>
           <h2 class="display display--lg">One platform, from raw land to energized asset</h2>
-          <p class="lede">Joule integrates the disciplines that industrial development usually fragments — land, entitlements, power, and infrastructure — under a single, accountable owner.</p>
         </div>
-        <div class="cards">
+        <div class="cards cards--three">
           <a class="card reveal" href="developments.html">
-            <figure class="media">
-              <img src="images/card-land.jpg"
-                   srcset="images/card-land-480.jpg 480w, images/card-land-900.jpg 900w, images/card-land.jpg 1400w"
-                   sizes="(max-width: 820px) 100vw, 50vw"
-                   width="1400" height="1050"
-                   alt="Open valley ranchland at sunrise with mountains in the distance" loading="lazy">
+            <figure class="card-media">
+              <img src="images/view-fletcher-836.webp" srcset="images/view-fletcher-836.webp 836w, images/view-fletcher.webp 1672w" sizes="(max-width: 900px) 100vw, 33vw" width="1672" height="941" alt="The Fletcher Campus in Fletcher, Oklahoma: industrial buildings beside open pasture" loading="lazy">
+              <figcaption>
+                <h3>Land Development</h3>
+              </figcaption>
             </figure>
             <div class="card-body">
-              <span class="card-kicker">01 — Land</span>
-              <h3>Land Development</h3>
-              <p>Identification, acquisition, entitlement, and master planning of strategic sites positioned for utility-scale and industrial demand.</p>
-              <span class="text-link">View Developments</span>
+              <p>Strategic sites at or near existing utility substations.</p>
+              <span class="text-link">Available Sites</span>
             </div>
           </a>
-          <a class="card reveal reveal-d1" href="power-solutions.html">
-            <figure class="media">
-              <img src="images/card-power.jpg"
-                   srcset="images/card-power-480.jpg 480w, images/card-power-900.jpg 900w, images/card-power.jpg 1400w"
-                   sizes="(max-width: 820px) 100vw, 50vw"
-                   width="1400" height="1050"
-                   alt="High-voltage transmission towers at sunset" loading="lazy">
+          <a class="card reveal reveal-d1" href="our-approach.html">
+            <figure class="card-media">
+              <img src="images/view-wolverine-power-836.webp" srcset="images/view-wolverine-power-836.webp 836w, images/view-wolverine-power.webp 1672w" sizes="(max-width: 900px) 100vw, 33vw" width="1672" height="941" alt="Pad-mount transformers and a utility substation at the Wolverine AI Campus in Shawnee, Oklahoma" loading="lazy">
+              <figcaption>
+                <h3>Power &amp; Infrastructure</h3>
+              </figcaption>
             </figure>
             <div class="card-body">
-              <span class="card-kicker">02 — Power</span>
-              <h3>Power Solutions</h3>
-              <p>Utility interconnection, on-site generation strategy, substations, and transmission planning for scalable AI and industrial loads.</p>
-              <span class="text-link">Explore Power</span>
+              <p>Utility agreements executed before a site is offered.</p>
+              <span class="text-link">Our Approach</span>
             </div>
           </a>
-          <a class="card reveal" href="infrastructure.html">
-            <figure class="media">
-              <img src="images/card-infrastructure.jpg"
-                   srcset="images/card-infrastructure-480.jpg 480w, images/card-infrastructure-900.jpg 900w, images/card-infrastructure.jpg 1400w"
-                   sizes="(max-width: 820px) 100vw, 50vw"
-                   width="1400" height="1050"
-                   alt="Modern data center campus at dusk with substation" loading="lazy">
+          <a class="card reveal reveal-d2" href="contact.html">
+            <figure class="card-media">
+              <img src="images/view-wolverine-utility-836.webp" srcset="images/view-wolverine-utility-836.webp 836w, images/view-wolverine-utility.webp 1672w" sizes="(max-width: 900px) 100vw, 33vw" width="1672" height="941" alt="Utility bucket trucks at the Wolverine AI Campus in Shawnee, Oklahoma" loading="lazy">
+              <figcaption>
+                <h3>Partnerships</h3>
+              </figcaption>
             </figure>
             <div class="card-body">
-              <span class="card-kicker">03 — Infrastructure</span>
-              <h3>Infrastructure</h3>
-              <p>Roads, fiber, water strategy, power corridors, and campus-ready site planning delivered to institutional engineering standards.</p>
-              <span class="text-link">See Capabilities</span>
-            </div>
-          </a>
-          <a class="card reveal reveal-d1" href="investors-partners.html">
-            <figure class="media">
-              <img src="images/card-partnerships.jpg"
-                   srcset="images/card-partnerships-480.jpg 480w, images/card-partnerships-900.jpg 900w, images/card-partnerships.jpg 1400w"
-                   sizes="(max-width: 820px) 100vw, 50vw"
-                   width="1400" height="1050"
-                   alt="Two engineers overlooking a development site at sunset" loading="lazy">
-            </figure>
-            <div class="card-body">
-              <span class="card-kicker">04 — Partnership</span>
-              <h3>Partnerships</h3>
-              <p>Aligned structures for landowners, utilities, hyperscalers, infrastructure funds, municipalities, and EPC partners.</p>
-              <span class="text-link">Investors &amp; Partners</span>
+              <p>Structures for landowners, utilities, operators, and capital.</p>
+              <span class="text-link">Partner With Us</span>
             </div>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- Metrics band -->
-    <section class="section section--dark">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">The Platform</p>
-          <h2 class="display display--lg">Positioned where land meets load</h2>
-        </div>
-        <div class="metrics reveal">
-          <div class="metric">
-            <div class="metric-value">Strategic Sites</div>
-            <div class="metric-label">Portfolio</div>
-            <p>A concentrated portfolio of high-conviction locations, anchored in Missouri and the interconnected markets around it.</p>
-          </div>
-          <div class="metric">
-            <div class="metric-value">Multi&#8209;Gigawatt Pipeline</div>
-            <div class="metric-label">Power</div>
-            <p>Interconnection and generation capacity under evaluation and advancement across the platform.</p>
-          </div>
-          <div class="metric">
-            <div class="metric-value">Power&#8209;Enabled Land</div>
-            <div class="metric-label">Positioning</div>
-            <p>Acreage controlled at the intersection of transmission, water, fiber, and industrial demand.</p>
-          </div>
-          <div class="metric">
-            <div class="metric-value">Long&#8209;Term Value</div>
-            <div class="metric-label">Horizon</div>
-            <p>Assets structured to be held and compounded across decades — not developed for resale headlines.</p>
-          </div>
-        </div>
-        <p class="metrics-note reveal">Joule presents platform positioning rather than operating metrics. Detailed portfolio and pipeline information is available to qualified counterparties under appropriate confidentiality.</p>
-      </div>
-    </section>
-
-    <!-- Featured development — Missouri-anchored -->
-    <section class="section">
+    <!-- Featured site -->
+    <section class="section section--tone">
       <div class="container">
         <div class="split split--media-right">
           <div class="split-content reveal">
-            <p class="eyebrow">Featured Development</p>
-            <h2 class="display display--lg">Heartland Industrial Power Site</h2>
+            <p class="eyebrow">Featured Site</p>
+            <h2 class="display display--lg">Wolverine AI Campus</h2>
             <div class="prose">
-              <p>A representative Joule development in our home market: a power-ready industrial site in Missouri&rsquo;s MISO territory, combining entitlement readiness, workforce access, and phased capacity deliverable on an industrial user&rsquo;s schedule.</p>
+              <p>46 acres in Shawnee, Oklahoma. 6.5 MW contracted, expandable to 15&ndash;30 MW.</p>
             </div>
-            <dl class="spec-list">
-              <div><dt>Acreage</dt><dd>850&plusmn; acres <span class="smallcaps-note">(illustrative)</span></dd></div>
-              <div><dt>Power Potential</dt><dd>150 &ndash; 400 MW <span class="smallcaps-note">(illustrative)</span></dd></div>
-              <div><dt>Market</dt><dd>Missouri · MISO / SPP</dd></div>
-              <div><dt>Intended Use</dt><dd>Advanced Manufacturing &amp; Industrial</dd></div>
-            </dl>
-            <a class="text-link" href="developments.html">All Developments</a>
+            <a class="text-link" href="developments.html">All Available Sites</a>
           </div>
-          <figure class="split-media media reveal reveal-d1" role="img" aria-label="Placeholder for Heartland Industrial Power Site imagery">
-            <div class="media-ph media-ph--tall">
-              <span class="media-label">Heartland Industrial Power Site<em>Placeholder — replace with site plan or aerial imagery</em></span>
-            </div>
+          <figure class="split-media media media--photo reveal reveal-d1">
+            <img src="images/view-wolverine-building-836.webp" srcset="images/view-wolverine-building-836.webp 836w, images/view-wolverine-building.webp 1672w" sizes="(max-width: 820px) 100vw, 45vw" width="1672" height="941" alt="The office and warehouse buildings at the Wolverine AI Campus in Shawnee, Oklahoma" loading="lazy">
+            <figcaption>Wolverine AI Campus, Shawnee, Oklahoma.</figcaption>
           </figure>
         </div>
       </div>
     </section>
 
     <!-- Partner CTA -->
-    <section class="section section--dark">
+    <section class="section section--cta">
       <div class="container">
         <div class="cta-band reveal">
-          <p class="eyebrow eyebrow--center">Work With Joule</p>
+          <div class="cta-text">
+          <p class="eyebrow">Work With Joule</p>
           <h2 class="display display--xl">Durable infrastructure begins with the right partner.</h2>
-          <p class="lede">Whether you hold land in the path of American energy demand, operate the grid that serves it, or deploy the capital that builds it — we should talk.</p>
+          </div>
           <div class="actions">
-            <a class="btn btn--bronze" href="contact.html">Partner With Us</a>
-            <a class="btn btn--on-dark" href="investors-partners.html">Investors &amp; Partners</a>
+            <a class="btn btn--primary" href="contact.html">Partner With Us</a>
+            <a class="btn btn--secondary" href="developments.html">View Available Sites</a>
           </div>
         </div>
       </div>
@@ -301,50 +193,42 @@
       <div class="footer-main">
         <div class="footer-brand">
           <a class="brand brand--left" href="index.html" aria-label="Joule Land Company — Home">
-            <span class="brand-j" aria-hidden="true">J</span>
+            <svg class="brand-mark" viewBox="-2 0 28 37" aria-hidden="true" focusable="false"><path d="M8 6H20V22A9 9 0 0 1 2 22" fill="none" stroke="currentColor" stroke-width="6"/></svg>
             <span class="brand-name">JOULE</span>
             <span class="brand-sub">Land Company</span>
           </a>
           <p class="footer-slogan">Developing Land. Powering America.</p>
-          <p class="footer-locale">Rooted in Missouri · Building for America</p>
         </div>
         <div class="footer-col">
           <h3>Company</h3>
           <ul>
-            <li><a href="about.html">About</a></li>
+            <li><a href="developments.html">Available Sites</a></li>
             <li><a href="our-approach.html">Our Approach</a></li>
-            <li><a href="insights.html">News &amp; Insights</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html">About</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h3>Platform</h3>
+          <h3>Contact</h3>
           <ul>
-            <li><a href="developments.html">Developments</a></li>
-            <li><a href="power-solutions.html">Power Solutions</a></li>
-            <li><a href="infrastructure.html">Infrastructure</a></li>
+            <li><a href="mailto:info@joulelandco.com">info@joulelandco.com</a></li>
+            <li><a href="contact.html">Send an inquiry</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h3>Partners</h3>
-          <ul>
-            <li><a href="investors-partners.html">Investors &amp; Partners</a></li>
-            <li><a href="contact.html">Landowner Inquiries</a></li>
-            <li><a href="contact.html">Utility Partnerships</a></li>
-          </ul>
+          <h3>Office</h3>
+          <address class="footer-address">Joule Land Company, Inc.<br>7660 Fay Ave, Suite H247<br>La Jolla, CA 92037</address>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>&copy; <span id="footer-year">2026</span> Joule Land Company. All rights reserved.</span>
+        <span>&copy; <span id="footer-year">2026</span> Joule Land Company, Inc. All rights reserved.</span>
         <nav class="footer-legal" aria-label="Legal">
           <a href="privacy.html">Privacy Policy</a>
           <a href="terms.html">Terms of Use</a>
         </nav>
-        <span>Representative content. Development details available to qualified counterparties.</span>
       </div>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=d21"></script>
 </body>
 </html>

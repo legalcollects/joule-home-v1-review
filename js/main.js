@@ -25,24 +25,46 @@
     });
   }
 
-  /* Subtle scroll reveals (skipped when reduced motion is preferred) */
+  /* Scroll reveals. Content is visible by default; only elements below the
+     first screen are held back, and position is polled on a timer as well as
+     on scroll because embedded and background views do not reliably deliver
+     scroll callbacks. Nothing on the first screen ever depends on this. */
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var revealed = document.querySelectorAll(".reveal");
-  if (!reduced && "IntersectionObserver" in window && revealed.length) {
-    var observer = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("in-view");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
-    );
-    revealed.forEach(function (el) { observer.observe(el); });
-  } else {
-    revealed.forEach(function (el) { el.classList.add("in-view"); });
+  var firstScreen = window.innerHeight || document.documentElement.clientHeight;
+  var pending = [];
+  var revealTimer = null;
+
+  function checkReveals() {
+    var root = document.documentElement;
+    var vh = window.innerHeight || root.clientHeight;
+    var atEnd = window.pageYOffset + vh >= root.scrollHeight - 2;
+    pending = pending.filter(function (el) {
+      if (atEnd || el.getBoundingClientRect().top < vh - 40) {
+        el.classList.remove("is-waiting");
+        return false;
+      }
+      return true;
+    });
+    if (!pending.length && revealTimer) {
+      clearInterval(revealTimer);
+      revealTimer = null;
+      window.removeEventListener("scroll", checkReveals);
+      window.removeEventListener("resize", checkReveals);
+    }
+  }
+
+  if (!reduced && firstScreen > 0) {
+    Array.prototype.forEach.call(document.querySelectorAll(".reveal"), function (el) {
+      if (el.getBoundingClientRect().top >= firstScreen) {
+        el.classList.add("is-waiting");
+        pending.push(el);
+      }
+    });
+    if (pending.length) {
+      revealTimer = setInterval(checkReveals, 200);
+      window.addEventListener("scroll", checkReveals, { passive: true });
+      window.addEventListener("resize", checkReveals);
+    }
   }
 
   /* Footer year */
@@ -61,15 +83,21 @@
       if (!note) {
         note = document.createElement("p");
         note.className = "field-error";
+        note.id = field.id + "-error";
         wrap.appendChild(note);
       }
+      /* Link the message to its field so screen readers announce it */
       if (message) {
         note.textContent = message;
         wrap.classList.add("has-error");
         field.classList.add("invalid");
+        field.setAttribute("aria-invalid", "true");
+        field.setAttribute("aria-describedby", note.id);
       } else {
         wrap.classList.remove("has-error");
         field.classList.remove("invalid");
+        field.removeAttribute("aria-invalid");
+        field.removeAttribute("aria-describedby");
       }
     }
 
@@ -145,7 +173,7 @@
       })
         .then(function (res) {
           if (!res.ok) throw new Error("Submission failed");
-          showConfirm("Thank you. Your inquiry has been received; a Joule principal will respond directly.");
+          showConfirm("Thank you. Your inquiry has been received.");
           form.reset();
         })
         .catch(function () {
