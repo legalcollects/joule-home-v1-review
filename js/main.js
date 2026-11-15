@@ -4,10 +4,9 @@
 (function () {
   "use strict";
 
-  /* Contact form endpoint.
-     Set this to your form service URL (Formspree, Basin, your own API, etc.)
-     to activate live submissions. While empty, the form runs in demo mode. */
-  var FORM_ENDPOINT = "";
+  /* Contact form endpoint (Formspree; delivers to info@joulelandco.com).
+     If this is ever emptied, the form falls back to opening a prefilled email. */
+  var FORM_ENDPOINT = "https://formspree.io/f/maeoejbq";
 
   /* Mobile navigation */
   var toggle = document.querySelector(".nav-toggle");
@@ -166,10 +165,18 @@
 
       var button = form.querySelector('button[type="submit"]');
       if (button) button.disabled = true;
+      /* Send the inquiry type as its readable label and use it in the email subject */
+      var data = new FormData(form);
+      var sel = document.getElementById("inquiry-type");
+      var label = sel && sel.selectedIndex > 0 ? sel.options[sel.selectedIndex].text : "General Contact";
+      data.set("inquiry-type", label);
+      data.append("_subject", "Website Inquiry \u2014 " + label);
+      data.delete("_gotcha");
+
       fetch(FORM_ENDPOINT, {
         method: "POST",
         headers: { "Accept": "application/json" },
-        body: new FormData(form)
+        body: data
       })
         .then(function (res) {
           if (!res.ok) throw new Error("Submission failed");
